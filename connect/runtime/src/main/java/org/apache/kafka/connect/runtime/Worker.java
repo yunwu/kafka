@@ -109,10 +109,13 @@ public class Worker {
     private final Converter internalValueConverter;
     private final OffsetBackingStore offsetBackingStore;
 
+    //连接管理
     private final ConcurrentMap<String, WorkerConnector> connectors = new ConcurrentHashMap<>();
     private final ConcurrentMap<ConnectorTaskId, WorkerTask> tasks = new ConcurrentHashMap<>();
     private SourceTaskOffsetCommitter sourceTaskOffsetCommitter;
+    //转换器
     private final WorkerConfigTransformer workerConfigTransformer;
+    //TODO 主要功能校验，确定一下具体含义
     private final ConnectorClientConfigOverridePolicy connectorClientConfigOverridePolicy;
 
     public Worker(

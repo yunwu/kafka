@@ -50,6 +50,7 @@ public class ProducerRecord<K, V> {
 
     private final String topic;
     private final Integer partition;
+    //TODO headers 有什么作用？
     private final Headers headers;
     private final K key;
     private final V value;

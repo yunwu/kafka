@@ -39,6 +39,7 @@ import java.util.concurrent.CompletableFuture;
 public class ProducerManager implements Closeable {
     private static final Logger log = LoggerFactory.getLogger(ProducerManager.class);
 
+    //存储各种meta信息
     private final RemoteLogMetadataSerde serde = new RemoteLogMetadataSerde();
     private final KafkaProducer<byte[], byte[]> producer;
     private final RemoteLogMetadataTopicPartitioner topicPartitioner;
@@ -83,6 +84,7 @@ public class ProducerManager implements Closeable {
                     }
                 }
             };
+            //发送消息时将消息包装成 ProducerRecord,value被序列化之后才会发送消息
             producer.send(new ProducerRecord<>(rlmmConfig.remoteLogMetadataTopicName(), metadataPartitionNum, null,
                                                serde.serialize(remoteLogMetadata)), callback);
         } catch (Exception ex) {
