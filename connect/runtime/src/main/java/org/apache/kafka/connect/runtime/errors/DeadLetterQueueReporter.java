@@ -49,6 +49,10 @@ import static java.util.Collections.singleton;
  * with its own Kafka topic dead letter queue. By default, the topic name is not set, and if the
  * connector config doesn't specify one, this feature is disabled.
  */
+
+/**
+ * 消费过的消息进入私信队列（PS需要两个配置，topic有明确命名，connect设定指定的队列 ）
+ */
 public class DeadLetterQueueReporter implements ErrorReporter {
 
     private static final Logger log = LoggerFactory.getLogger(DeadLetterQueueReporter.class);

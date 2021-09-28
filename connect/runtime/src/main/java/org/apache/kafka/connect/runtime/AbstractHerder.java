@@ -90,6 +90,10 @@ import java.util.stream.Collectors;
  *    the value which will cause the state to be inconsistent (most likely until the next rebalance). Until
  *    we have proper producer groups with fenced groups, there is not much else we can do.
  */
+
+/**
+ * connector/task 生命周期追踪管理
+ */
 public abstract class AbstractHerder implements Herder, TaskStatus.Listener, ConnectorStatus.Listener {
 
     private final String workerId;
