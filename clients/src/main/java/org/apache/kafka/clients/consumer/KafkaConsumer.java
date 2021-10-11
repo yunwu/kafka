@@ -568,9 +568,13 @@ public class KafkaConsumer<K, V> implements Consumer<K, V> {
     final KafkaConsumerMetrics kafkaConsumerMetrics;
 
     private Logger log;
+    //每个consumer 绑定一个唯一的clientId, 如何生成的需要处理看一下，TODO
     private final String clientId;
+    //TODO 每个consumer绑定一个group???
     private final Optional<String> groupId;
+    //协调器？？？
     private final ConsumerCoordinator coordinator;
+    //TODO 为什么key, value 序列化是分开的？
     private final Deserializer<K> keyDeserializer;
     private final Deserializer<V> valueDeserializer;
     private final Fetcher<K, V> fetcher;

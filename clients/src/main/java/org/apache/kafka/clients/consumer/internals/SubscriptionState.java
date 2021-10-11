@@ -96,6 +96,7 @@ public class SubscriptionState {
     private final PartitionStates<TopicPartitionState> assignment;
 
     /* Default offset reset strategy */
+    //TODO 分组默认策略  书签1
     private final OffsetResetStrategy defaultResetStrategy;
 
     /* User-provided listener to be invoked when assignment changes */

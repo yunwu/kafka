@@ -43,11 +43,13 @@ public interface Consumer<K, V> extends Closeable {
 
     /**
      * @see KafkaConsumer#subscription()
+     * TODo 订阅信息
      */
     Set<String> subscription();
 
     /**
      * @see KafkaConsumer#subscribe(Collection)
+     * 订阅操作
      */
     void subscribe(Collection<String> topics);
 

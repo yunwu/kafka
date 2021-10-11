@@ -60,6 +60,7 @@ public class RoundRobinPartitioner implements Partitioner {
             return availablePartitions.get(part).partition();
         } else {
             // no partitions are available, give a non-available partition
+            //TODO 如果没有可用分区，为什么不抛异常？？
             return Utils.toPositive(nextValue) % numPartitions;
         }
     }
